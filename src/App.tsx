@@ -11,6 +11,7 @@ import School from './pages/school';
 import SuccessfullPayment from './pages/successfulPayment';
 import Login from './pages/login';
 import ScreenTrance from './pages/screenTrance';
+import Points from './pages/points';
 
 function App() {
   	return (
@@ -25,6 +26,7 @@ function App() {
 						<Route path='/app/plan' element={<Plan />} />
 						<Route path='/app/school' element={<School />} />
 						<Route path='/app/successful-payment' element={<SuccessfullPayment />} />
+						<Route path='/app/points' element={<Points />} />
 						<Route path='/app/chat' element={<div>Chat IA Edu</div>} />
 					</Route>
 
