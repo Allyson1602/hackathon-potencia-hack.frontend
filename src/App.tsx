@@ -12,6 +12,7 @@ import SuccessfullPayment from './pages/successfulPayment';
 import Login from './pages/login';
 import ScreenTrance from './pages/screenTrance';
 import Points from './pages/points';
+import ChatBot from './pages/chatBot';
 
 function App() {
   	return (
@@ -27,7 +28,7 @@ function App() {
 						<Route path='/app/school' element={<School />} />
 						<Route path='/app/successful-payment' element={<SuccessfullPayment />} />
 						<Route path='/app/points' element={<Points />} />
-						<Route path='/app/chat' element={<div>Chat IA Edu</div>} />
+						<Route path='/app/chat' element={<ChatBot />} />
 					</Route>
 
 					<Route path='/login' element={<Login />} />
