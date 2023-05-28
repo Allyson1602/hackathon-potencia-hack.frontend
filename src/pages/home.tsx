@@ -5,6 +5,7 @@ import school1 from '../assets/images/school1.png';
 import school2 from '../assets/images/school2.png';
 import { styled } from '@mui/material/styles';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CardStyled = styled(Card)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
@@ -14,6 +15,7 @@ const CardStyled = styled(Card)(({ theme }) => ({
 }));
 
 const Home: React.FC = () => {
+    const navigate = useNavigate();
     const [schools, setSchools] = useState<any[]>([
         {
             image: school1,
@@ -110,7 +112,7 @@ const Home: React.FC = () => {
                     <Stack justifyContent='center' sx={{
                         padding: (theme) => theme.spacing(2, 0),
                     }}>
-                        <Button sx={{width: '164px', alignSelf: 'center'}} variant="contained">Doação</Button>
+                        <Button sx={{width: '164px', alignSelf: 'center'}} variant="contained" onClick={() => {navigate('/donation')}}>Doação</Button>
                     </Stack>
                 </Box>
                 
