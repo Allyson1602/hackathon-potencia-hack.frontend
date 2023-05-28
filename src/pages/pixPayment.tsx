@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, CardMedia, Stack, Theme, Typography } from "@mui/material";
+import { Box, CardContent, Typography } from "@mui/material";
 import pixPayment from '../assets/images/pix-payment.png';
 
 
