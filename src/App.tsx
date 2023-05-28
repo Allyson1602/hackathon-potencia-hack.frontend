@@ -10,6 +10,7 @@ import Plan from './pages/plan';
 import School from './pages/school';
 import SuccessfullPayment from './pages/successfulPayment';
 import Login from './pages/login';
+import ScreenTrance from './pages/screenTrance';
 
 function App() {
   	return (
@@ -27,7 +28,7 @@ function App() {
 					</Route>
 
 					<Route path='/login' element={<Login />} />
-					<Route path='/' element={<div>screen</div>} />
+					<Route path='/' element={<ScreenTrance />} />
 				</Routes>
 			</BrowserRouter>
 		</ThemeProvider>
