@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Stack, Theme, Typography } from "@mui/material";
-
+import { Box, TextField, Card, CardActionArea, CardContent, CardMedia, Stack, Theme, Typography } from "@mui/material";
+import "./chatBot.css";
 
 interface ChatMessage {
     role: string;
@@ -47,7 +47,12 @@ const ChatBot: React.FC = () => {
     };
 
     return (
-        <Box>
+        <Box
+            sx={{
+                width: "800px",
+
+                padding: (theme) => theme.spacing(2),
+            }}>
             <Typography sx={{
                 fontWeight: '700',
                 fontSize: '18px',
@@ -59,20 +64,23 @@ const ChatBot: React.FC = () => {
                 {chats &&
                     chats.length &&
                     chats.map((chat, index) => (
-                        <p key={index} className={chat.role === "user" ? "user_msg" : ""}>
-                            <span>{chat.content}</span>
+                        <p key={index} className={" p " + chat.role === "user" ? "user_msg" : ""}>
+                            <span className={"p span"} >{chat.content}</span>
                         </p>
                     ))}
             </section>
 
             <div className={isTyping ? "" : "hide"}>
-                <p>
+                <p className={"p"}>
                     <i>{isTyping ? "Typing" : ""}</i>
                 </p>
             </div>
 
-            <form onSubmit={chat}>
-                <input
+            <form onSubmit={chat} >
+                <TextField 
+                 sx={{
+                    width: "100%"
+                }}
                     type="text"
                     name="message"
                     value={message}
@@ -80,7 +88,7 @@ const ChatBot: React.FC = () => {
                     onChange={(e) => setMessage(e.target.value)}
                 />
             </form>
-        </Box>
+        </Box >
     );
 };
 
