@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, TextField, Card, CardActionArea, CardContent, CardMedia, Stack, Theme, Typography } from "@mui/material";
+import { Box, TextField, Card, CardActionArea, CardContent, CardMedia, Stack, Theme, Typography, InputAdornment } from "@mui/material";
 import "./chatBot.css";
+import { Block } from "@mui/icons-material";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import deliveryBoy from "../assets/images/delivery-boy.png";
 
 interface ChatMessage {
     role: string;
@@ -49,43 +52,77 @@ const ChatBot: React.FC = () => {
     return (
         <Box
             sx={{
-                width: "800px",
+                maxHeight: '384px',
+                overflow: 'auto',
+                padding: (theme) => theme.spacing(2.5),
+            }}
+        >
+            <Box>
+                <Stack direction='row' justifyContent='center'>
+                    <img src={deliveryBoy} alt="delivery-boy" style={{width: "134px"}} />
+                </Stack>
 
-                padding: (theme) => theme.spacing(2),
-            }}>
-            <Typography sx={{
-                fontWeight: '700',
-                fontSize: '18px',
-                lineHeight: '22px',
-            }}>
-                Olá, eu sou o Edu e vou te ajudar!
-            </Typography>
-            <section>
-                {chats &&
-                    chats.length &&
+                <Typography sx={{
+                    fontWeight: '400',
+                    fontSize: '14px',
+                    lineHeight: '17px',
+                    textAlign: 'center',
+                    paddingTop: (theme) => theme.spacing(2),
+                }}>
+                    Olá, eu sou o Edu e vou te ajudar!
+                </Typography>
+            </Box>
+            
+            <section style={{}}>
+                {chats?.length > 0 &&
                     chats.map((chat, index) => (
-                        <p key={index} className={" p " + chat.role === "user" ? "user_msg" : ""}>
-                            <span className={"p span"} >{chat.content}</span>
-                        </p>
+                        <Typography key={index} className={chat.role === "user" ? "user_msg" : ""} sx={{
+                            margin: '15px 0',
+                            background: '#D9D9D9',
+                            borderRadius: '20px',
+                            fontSize: '12px',
+                            padding: '10px 15px',
+                            width: '70%',
+                            float: 'left',
+                        }}>{chat.content}</Typography>
                     ))}
             </section>
 
-            <div className={isTyping ? "" : "hide"}>
-                <p className={"p"}>
-                    <i>{isTyping ? "Typing" : ""}</i>
-                </p>
-            </div>
+            {isTyping && (
+                <div style={{clear: 'both'}}>
+                    <Typography sx={{
+                        margin: '15px 0',
+                        background: '#D9D9D9',
+                        borderRadius: '20px',
+                        fontSize: '12px',
+                        padding: '10px 15px',
+                        width: '70%',
+                        float: 'left',
+                    }}>{isTyping ? "Digitando..." : ""}</Typography>
+                </div>
+            )}
 
-            <form onSubmit={chat} >
+            <form onSubmit={chat} style={{
+                width: 'calc(100% - 40px)',
+                position: 'fixed',
+                bottom: '75px',
+                background: '#fff',
+            }}>
                 <TextField 
-                 sx={{
-                    width: "100%"
-                }}
+                    fullWidth
+                    size="small"
                     type="text"
                     name="message"
                     value={message}
                     placeholder="Digite aqui..."
                     onChange={(e) => setMessage(e.target.value)}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                            <ArrowForwardIcon color="primary" />
+                        </InputAdornment>
+                      ),
+                    }}
                 />
             </form>
         </Box >

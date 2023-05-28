@@ -1,52 +1,8 @@
 
-  /* Main Container Styles */
-  .main {
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  /* Paragraph Styles */
-  .p {
-    background-color: lightgray;
-    max-width: 70%;
-    padding: 15px;
-    border-radius: 50px;
-  }
-  
-  /* Inner Span Styles */
-  .p .span {
-    margin: 5px;
-  }
-  
-  /* First Child Span Styles */
-  .p .span:first-child {
-    margin-right: 0;
-  }
-  
-  /* User Message Styles */
-  .user_msg {
-    text-align: right;
-    margin-left: 30%;
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  
-  /* Hide Styles */
-  .hide {
-    visibility: hidden;
-    display: none;
-  }
-  
-  /* Form Styles */
-  .form {
-    text-align: center;
-    position: sticky;
-    bottom: 0;
-  }
-  
-  
-  /* Focused Input Styles */
-  .input:focus {
-    outline: none;
-  }
-  
+.user_msg {
+  float: right !important;
+  /* text-align: right;
+  margin-left: 30%;
+  display: flex;
+  flex-direction: row-reverse; */
+}
