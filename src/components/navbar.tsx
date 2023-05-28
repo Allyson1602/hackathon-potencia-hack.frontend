@@ -1,8 +1,7 @@
-import logoMenu from "../assets/images/logo-menu.svg";
 import { AppBar, Box, Button, Container, Drawer, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, MenuList, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
-import { Theme, alpha } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles';
 import { ContentCut } from "@mui/icons-material";
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -11,7 +10,7 @@ const Navbar: React.FC = () => {
     const [openDrawer, setOpenDrawer] = useState(false);
 
     return (
-        <AppBar position="static" sx={{
+        <AppBar sx={{
             position: "absolute",
             justifyContent: "center",
             height: "100px",

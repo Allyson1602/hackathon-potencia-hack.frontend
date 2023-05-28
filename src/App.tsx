@@ -1,32 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/navbar';
 import theme from './theme';
 import { ThemeProvider } from '@mui/material/styles';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Main from './components/main';
+import Home from './pages/home';
+import CardPayment from './pages/cardPayment';
+import Donation from './pages/donation';
+import PixPayment from './pages/pixPayment';
+import Plan from './pages/plan';
+import School from './pages/school';
+import SuccessfullPayment from './pages/successfulPayment';
+import Thank from './pages/thank';
 
 function App() {
-  return (
-	<ThemeProvider theme={theme}>
-		<div className="App">
-			<Navbar />
-
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
-	</ThemeProvider>
-  );
+  	return (
+		<ThemeProvider theme={theme}>
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<Main />} >
+						<Route path='' element={<Home />} />
+						<Route path='/card-payment' element={<CardPayment />} />
+						<Route path='/donation' element={<Donation />} />
+						<Route path='/pix-payment' element={<PixPayment />} />
+						<Route path='/plan' element={<Plan />} />
+						<Route path='/school' element={<School />} />
+						<Route path='/successful-payment' element={<SuccessfullPayment />} />
+						<Route path='/thank' element={<Thank />} />
+					</Route>
+				</Routes>
+			</BrowserRouter>
+		</ThemeProvider>
+	);
 }
 
 export default App;

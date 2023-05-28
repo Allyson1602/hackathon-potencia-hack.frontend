@@ -4,6 +4,12 @@ import './assets/css/fonts.css';
 const theme = createTheme({
   typography: {
     fontFamily: '"Montserrat", "Helvetica", "Arial", sans-serif',
+    button: {
+      textTransform: 'none',
+      fontWeight: '700',
+      fontSize: '14px',
+      lineHeight: '20px'
+    }
   },
   palette: {
     primary: {
@@ -17,6 +23,9 @@ const theme = createTheme({
         dark: "#4142a7"
     },
   },
+  shape: {
+    borderRadius: 10
+  }
 });
 
 export default theme;
