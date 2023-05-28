@@ -28,7 +28,7 @@ function App() {
 						<Route path='/app/school' element={<School />} />
 						<Route path='/app/successful-payment' element={<SuccessfullPayment />} />
 						<Route path='/app/points' element={<Points />} />
-						<Route path='/app/chat' element={<ChatBot />} />
+						<Route path='/app/chat-bot' element={<ChatBot />} />
 					</Route>
 
 					<Route path='/login' element={<Login />} />
