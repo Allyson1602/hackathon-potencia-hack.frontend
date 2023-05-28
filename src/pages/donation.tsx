@@ -41,11 +41,18 @@ const Donation: React.FC = () => {
                 paddingTop: (theme) => theme.spacing(2),
             }}>
                 {schools?.length > 0 && schools.map((school) => (
-                    <Card key={school.id} sx={{
-                        boxShadow: '0px 4px 4px rgba(127, 168, 123, 0.25)',
-                        border: '1px solid #ece1e166',
-                        marginBottom: (theme) => theme.spacing(2),
-                    }}>
+                    <Card
+                        key={school.id}
+                        onClick={(e: any) => {
+                            e.stopPropagation();
+                            navigate('/app/school');
+                        }}
+                        sx={{
+                            boxShadow: '0px 4px 4px rgba(127, 168, 123, 0.25)',
+                            border: '1px solid #ece1e166',
+                            marginBottom: (theme) => theme.spacing(2),
+                        }}
+                    >
                         <CardContent sx={{
                             padding: (theme) => theme.spacing(1) + " !important",
                         }}>
@@ -65,7 +72,14 @@ const Donation: React.FC = () => {
                             <Stack direction='row' justifyContent='center' sx={{
                                 paddingTop: (theme) => theme.spacing(2),
                             }}>
-                                <Button sx={{width: '120px'}} variant="contained" onClick={() => {navigate('/app/plan')}}>Doar</Button>
+                                <Button
+                                    sx={{width: '120px'}}
+                                    variant="contained"
+                                    onClick={(e: any) => {
+                                        navigate('/app/plan');
+                                        e.stopPropagation();
+                                    }}
+                                >Doar</Button>
                             </Stack>
                         </CardContent>
                     </Card>
