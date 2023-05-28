@@ -59,7 +59,7 @@ const Home: React.FC = () => {
                             fontSize: '14px',
                             lineHeight: '17px',
                             textAlign: 'center',
-                        }}>NOME DO APP</Typography>
+                        }}>EduDoar</Typography>
 
                         <Typography sx={{
                             fontWeight: '400',
@@ -129,6 +129,7 @@ const Home: React.FC = () => {
                                 boxShadow: '0px 4px 4px rgba(127, 168, 123, 0.25)',
                                 height: '144px',
                                 padding: (theme) => theme.spacing(0, 1),
+                                border: '1px solid #ece1e166'
                             }}>
                                 <CardMedia sx={{
                                     display: 'flex',
@@ -168,6 +169,7 @@ const Home: React.FC = () => {
                             <Card sx={{
                                 boxShadow: '0px 4px 4px rgba(127, 168, 123, 0.25)',
                                 padding: (theme) => theme.spacing(0, 1),
+                                border: '1px solid #ece1e166'
                             }}>
                                 <CardContent sx={{
                                     padding: '0'
