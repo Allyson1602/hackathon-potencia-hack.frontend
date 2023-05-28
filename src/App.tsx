@@ -9,7 +9,7 @@ import PixPayment from './pages/pixPayment';
 import Plan from './pages/plan';
 import School from './pages/school';
 import SuccessfullPayment from './pages/successfulPayment';
-
+import { Login } from '@mui/icons-material';
 
 function App() {
   	return (
@@ -18,6 +18,7 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Main />} >
 						<Route path='' element={<Home />} />
+						<Route path='/login' element={<Login />} />
 						<Route path='/card-payment' element={<CardPayment />} />
 						<Route path='/donation' element={<Donation />} />
 						<Route path='/pix-payment' element={<PixPayment />} />

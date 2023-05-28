@@ -1,6 +1,7 @@
 import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import cardPaymentService, { ICardPaymentModel } from "../services/cardPayment";
 
 const CardPayment: React.FC = () => {
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ const CardPayment: React.FC = () => {
     const [cvv, setCvv] = useState("");
     const [identity, setIdentity] = useState("");
 
-    const savePayment = () => {
+    const savePayment = (): ICardPaymentModel => {
         return {
             cardNumber,
             nameCard,
@@ -19,6 +20,16 @@ const CardPayment: React.FC = () => {
             cvv,
             identity
         }
+    }
+
+    const handleClickPayment = () => {
+        // cardPaymentService.makeCardPayment(savePayment()).then(({data}) => {
+        //     if(data.success) {
+        //         navigate('/successful-payment');
+        //     }
+        // });
+        
+        navigate('/successful-payment');
     }
 
     return (
@@ -88,7 +99,7 @@ const CardPayment: React.FC = () => {
                 marginTop: (theme) => theme.spacing(4),
                 paddingTop: (theme) => theme.spacing(2),
             }}>
-                <Button sx={{width: '250px'}} variant="contained" onClick={() => {navigate('/successful-payment')}}>Efetuar pagamento</Button>
+                <Button sx={{width: '250px'}} variant="contained" onClick={handleClickPayment}>Efetuar pagamento</Button>
             </Stack>
         </Box>
     );
