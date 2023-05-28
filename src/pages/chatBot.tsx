@@ -52,7 +52,7 @@ const ChatBot: React.FC = () => {
     return (
         <Box
             sx={{
-                maxHeight: '384px',
+                maxHeight: '410px',
                 overflow: 'auto',
                 padding: (theme) => theme.spacing(2.5),
             }}
