@@ -9,7 +9,7 @@ import PixPayment from './pages/pixPayment';
 import Plan from './pages/plan';
 import School from './pages/school';
 import SuccessfullPayment from './pages/successfulPayment';
-import Thank from './pages/thank';
+
 
 function App() {
   	return (
@@ -24,7 +24,6 @@ function App() {
 						<Route path='/plan' element={<Plan />} />
 						<Route path='/school' element={<School />} />
 						<Route path='/successful-payment' element={<SuccessfullPayment />} />
-						<Route path='/thank' element={<Thank />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>
