@@ -25,6 +25,7 @@ function App() {
 						<Route path='/app/plan' element={<Plan />} />
 						<Route path='/app/school' element={<School />} />
 						<Route path='/app/successful-payment' element={<SuccessfullPayment />} />
+						<Route path='/app/chat' element={<div>Chat IA Edu</div>} />
 					</Route>
 
 					<Route path='/login' element={<Login />} />

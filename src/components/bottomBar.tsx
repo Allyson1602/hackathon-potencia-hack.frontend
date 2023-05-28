@@ -1,15 +1,14 @@
 import { Box, Container, Drawer, IconButton, ListItemIcon, ListItemText, MenuItem, MenuList, Stack, Typography } from "@mui/material";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useNavigate } from "react-router-dom";
 import { ContentCut } from "@mui/icons-material";
 import { useState } from "react";
 import CloseIcon from '@mui/icons-material/Close';
+import TextsmsOutlinedIcon from '@mui/icons-material/TextsmsOutlined';
 
 const BottomBar: React.FC = () => {
     const navigate = useNavigate();
-    const [openDrawer, setOpenDrawer] = useState(false);
 
     return (
         <Container sx={{
@@ -41,17 +40,17 @@ const BottomBar: React.FC = () => {
                 </Stack>
                 
                 <Stack>
-                    <IconButton onClick={() => {setOpenDrawer(true)}} sx={{
+                    <IconButton onClick={() => {navigate('/app/chat')}} sx={{
                         flexDirection: 'column'
                     }}>
-                        <MenuOutlinedIcon color="primary" />
+                        <TextsmsOutlinedIcon color="primary" />
 
                         <Typography sx={{
                             fontWeight: '400',
                             fontSize: '12px',
                             lineHeight: '15px',
                             color: (theme) => theme.palette.common.black
-                        }}>Menu</Typography>
+                        }}>IA Edu</Typography>
                     </IconButton>
                 </Stack>
                 
@@ -70,62 +69,6 @@ const BottomBar: React.FC = () => {
                     </IconButton>
                 </Stack>
             </Stack>
-            
-            <Drawer
-                anchor={'bottom'}
-                open={openDrawer}
-                onClose={() => setOpenDrawer(false)}
-            >
-                <Box
-                    sx={{
-                        width: "100%",
-                        height: "100vh",
-                        backgroundColor: (theme) => theme.palette.primary.light
-                    }}
-                >
-                    <IconButton
-                        onClick={() => setOpenDrawer(false)}
-                        sx={{
-                            position: 'absolute',
-                            right: 8,
-                            top: 8,
-                            color: (theme) => theme.palette.grey[500],
-                        }}
-                    >
-                        <CloseIcon />
-                    </IconButton>
-
-                    <MenuList
-                        sx={{
-                            marginTop: '2rem',
-                        }}
-                    >
-                        <MenuItem>
-                            <ListItemIcon>
-                                <ContentCut fontSize="small" />
-                            </ListItemIcon>
-
-                            <ListItemText>Escola</ListItemText>
-                        </MenuItem>
-                        
-                        <MenuItem>
-                            <ListItemIcon>
-                                <ContentCut fontSize="small" />
-                            </ListItemIcon>
-
-                            <ListItemText>Escola</ListItemText>
-                        </MenuItem>
-                        
-                        <MenuItem>
-                            <ListItemIcon>
-                                <ContentCut fontSize="small" />
-                            </ListItemIcon>
-
-                            <ListItemText>Escola</ListItemText>
-                        </MenuItem>
-                    </MenuList>
-                </Box>
-            </Drawer>
         </Container>
     );
 };
