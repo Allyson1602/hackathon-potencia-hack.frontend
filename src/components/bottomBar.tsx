@@ -26,7 +26,7 @@ const BottomBar: React.FC = () => {
                 alignItems: 'center',
             }}>
                 <Stack>
-                    <IconButton onClick={() => {navigate("/")}} sx={{
+                    <IconButton onClick={() => {navigate("/app")}} sx={{
                         flexDirection: 'column'
                     }}>
                         <HomeOutlinedIcon color="primary" />
@@ -56,7 +56,7 @@ const BottomBar: React.FC = () => {
                 </Stack>
                 
                 <Stack>
-                    <IconButton onClick={() => {navigate("/school")}} sx={{
+                    <IconButton onClick={() => {navigate("/app/school")}} sx={{
                         flexDirection: 'column'
                     }}>
                         <SearchOutlinedIcon color="primary" />

@@ -111,7 +111,7 @@ const Plan: React.FC = () => {
                                 bottom: '-16px',
                                 width: '100%',
                             }}>
-                                <Button sx={{width: '180px'}} variant="contained" onClick={() => {navigate('/card-payment')}}>Efetuar pagamento</Button>
+                                <Button sx={{width: '180px'}} variant="contained" onClick={() => {navigate('/app/card-payment')}}>Efetuar pagamento</Button>
                             </Stack>
                         </CardContent>
                     </Card>
@@ -158,7 +158,7 @@ const Plan: React.FC = () => {
                                 bottom: '-16px',
                                 width: '100%',
                             }}>
-                                <Button sx={{width: '180px'}} variant="contained" onClick={() => {navigate('/pix-payment')}}>Efetuar pagamento</Button>
+                                <Button sx={{width: '180px'}} variant="contained" onClick={() => {navigate('/app/pix-payment')}}>Efetuar pagamento</Button>
                             </Stack>
                         </CardContent>
                     </Card>

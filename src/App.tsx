@@ -9,23 +9,25 @@ import PixPayment from './pages/pixPayment';
 import Plan from './pages/plan';
 import School from './pages/school';
 import SuccessfullPayment from './pages/successfulPayment';
-import { Login } from '@mui/icons-material';
+import Login from './pages/login';
 
 function App() {
   	return (
 		<ThemeProvider theme={theme}>
 			<BrowserRouter>
 				<Routes>
-					<Route path='/' element={<Main />} >
-						<Route path='' element={<Home />} />
-						<Route path='/login' element={<Login />} />
-						<Route path='/card-payment' element={<CardPayment />} />
-						<Route path='/donation' element={<Donation />} />
-						<Route path='/pix-payment' element={<PixPayment />} />
-						<Route path='/plan' element={<Plan />} />
-						<Route path='/school' element={<School />} />
-						<Route path='/successful-payment' element={<SuccessfullPayment />} />
+					<Route path='/app' element={<Main />} >
+						<Route path='/app' element={<Home />} />
+						<Route path='/app/card-payment' element={<CardPayment />} />
+						<Route path='/app/donation' element={<Donation />} />
+						<Route path='/app/pix-payment' element={<PixPayment />} />
+						<Route path='/app/plan' element={<Plan />} />
+						<Route path='/app/school' element={<School />} />
+						<Route path='/app/successful-payment' element={<SuccessfullPayment />} />
 					</Route>
+
+					<Route path='/login' element={<Login />} />
+					<Route path='/' element={<div>screen</div>} />
 				</Routes>
 			</BrowserRouter>
 		</ThemeProvider>

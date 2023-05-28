@@ -112,7 +112,7 @@ const Home: React.FC = () => {
                     <Stack justifyContent='center' sx={{
                         padding: (theme) => theme.spacing(2, 0),
                     }}>
-                        <Button sx={{width: '164px', alignSelf: 'center'}} variant="contained" onClick={() => {navigate('/donation')}}>Doação</Button>
+                        <Button sx={{width: '164px', alignSelf: 'center'}} variant="contained" onClick={() => {navigate('/app/donation')}}>Doação</Button>
                     </Stack>
                 </Box>
                 
@@ -127,7 +127,7 @@ const Home: React.FC = () => {
                     <Stack direction='row' spacing={1.5}>
                         {schools && schools.map((school) => (
 
-                            <Card sx={{
+                            <Card key={school.name} sx={{
                                 boxShadow: '0px 4px 4px rgba(127, 168, 123, 0.25)',
                                 height: '144px',
                                 padding: (theme) => theme.spacing(0, 1),
@@ -168,7 +168,7 @@ const Home: React.FC = () => {
                     <Stack spacing={1.5}>
                         {reports && reports.map((report) => (
 
-                            <Card sx={{
+                            <Card key={report.name} sx={{
                                 boxShadow: '0px 4px 4px rgba(127, 168, 123, 0.25)',
                                 padding: (theme) => theme.spacing(0, 1),
                                 border: '1px solid #ece1e166'

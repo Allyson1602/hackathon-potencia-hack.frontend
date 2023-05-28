@@ -65,7 +65,7 @@ const Donation: React.FC = () => {
                             <Stack direction='row' justifyContent='center' sx={{
                                 paddingTop: (theme) => theme.spacing(2),
                             }}>
-                                <Button sx={{width: '120px'}} variant="contained" onClick={() => {navigate('/plan')}}>Doar</Button>
+                                <Button sx={{width: '120px'}} variant="contained" onClick={() => {navigate('/app/plan')}}>Doar</Button>
                             </Stack>
                         </CardContent>
                     </Card>

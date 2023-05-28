@@ -25,11 +25,11 @@ const CardPayment: React.FC = () => {
     const handleClickPayment = () => {
         // cardPaymentService.makeCardPayment(savePayment()).then(({data}) => {
         //     if(data.success) {
-        //         navigate('/successful-payment');
+        //         navigate('/app/successful-payment');
         //     }
         // });
         
-        navigate('/successful-payment');
+        navigate('/app/successful-payment');
     }
 
     return (
