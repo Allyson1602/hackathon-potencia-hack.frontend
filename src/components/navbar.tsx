@@ -1,66 +1,47 @@
 import logoMenu from "../assets/images/logo-menu.svg";
-import { AppBar, Box, Button, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem, MenuList, Paper, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Container, Drawer, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, MenuList, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
-import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
-import { styled, alpha, useTheme } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
+import { Theme, alpha } from '@mui/material/styles';
 import { ContentCut } from "@mui/icons-material";
 import CloseIcon from '@mui/icons-material/Close';
-
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    width: '50%',
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(3),
-        width: 'auto',
-    },
-}));
-  
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    right: '0',
-    top: '0',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
-  
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-        padding: theme.spacing(1, 0, 1, 1),
-        paddingRight: `calc(1em + ${theme.spacing(4)})`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: '20ch',
-        },
-    },
-}));
 
 const Navbar: React.FC = () => {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [openDrawer, setOpenDrawer] = useState(false);
 
     return (
-        <AppBar position="static">
+        <AppBar position="static" sx={{
+            position: "absolute",
+            justifyContent: "center",
+            height: "100px",
+            background: "linear-gradient(200deg, #6200eeb3, #6200ee 60%), #FFF"
+        }}>
             <Container maxWidth="xl">
-                <Toolbar disableGutters style={{
+                <Toolbar disableGutters sx={{
                     display: 'flex',
                     justifyContent: 'space-between',
+                    marginTop: (theme: Theme) => theme.spacing(3)
                 }}>
-                    <div>
-                        <img src={logoMenu} alt="logo" style={{ width: '50px' }} />
-                    </div>
+                    <Box sx={{
+                        textAlign: 'start'
+                    }}>
+                        <Typography
+                            style={{
+                                fontWeight: '400',
+                                fontSize: '14px',
+                                lineHeight: '17px'
+                            }}
+                        >Olá</Typography>
+
+                        <Typography
+                            style={{
+                                fontWeight: "700",
+                                fontSize: "24px",
+                                lineHeight: "29px"
+                            }}
+                        >Marina</Typography>
+                    </Box>
                     
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <Button
@@ -79,14 +60,6 @@ const Navbar: React.FC = () => {
                             sx={{ my: 2, color: 'white', display: 'block' }}
                         >escola</Button>
                     </Box>
-                    
-                    <Search>
-                        <StyledInputBase placeholder="procurar..." />
-
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                    </Search>
                     
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton

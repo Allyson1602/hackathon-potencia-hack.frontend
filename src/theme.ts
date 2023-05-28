@@ -1,6 +1,10 @@
 import { createTheme } from '@mui/material/styles';
+import './assets/css/fonts.css';
 
 const theme = createTheme({
+  typography: {
+    fontFamily: '"Montserrat", "Helvetica", "Arial", sans-serif',
+  },
   palette: {
     primary: {
         light: "#8133f1",
