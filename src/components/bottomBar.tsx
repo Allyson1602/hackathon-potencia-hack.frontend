@@ -1,10 +1,7 @@
-import { Box, Container, Drawer, IconButton, ListItemIcon, ListItemText, MenuItem, MenuList, Stack, Typography } from "@mui/material";
+import { Container, IconButton, Stack, Typography } from "@mui/material";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useNavigate } from "react-router-dom";
-import { ContentCut } from "@mui/icons-material";
-import { useState } from "react";
-import CloseIcon from '@mui/icons-material/Close';
 import TextsmsOutlinedIcon from '@mui/icons-material/TextsmsOutlined';
 
 const BottomBar: React.FC = () => {
@@ -55,7 +52,7 @@ const BottomBar: React.FC = () => {
                 </Stack>
                 
                 <Stack>
-                    <IconButton onClick={() => {navigate("/app/school")}} sx={{
+                    <IconButton onClick={() => {navigate("/app/donation")}} sx={{
                         flexDirection: 'column'
                     }}>
                         <SearchOutlinedIcon color="primary" />
