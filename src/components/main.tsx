@@ -9,7 +9,8 @@ const Main: React.FC = () => {
             <Navbar />
 
             <Box sx={{
-                paddingTop: "100px"
+                paddingTop: '100px',
+                paddingBottom: '65px',
             }}>
                 <Outlet />
             </Box>
