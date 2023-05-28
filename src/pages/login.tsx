@@ -84,6 +84,9 @@ const Login: React.FC = () => {
                     padding: (theme) => theme.spacing(1.5, 0),
                     backgroundColor: (theme) => theme.palette.common.white,
                     marginBottom: (theme) => theme.spacing(3),
+                    '&:hover': {
+                        backgroundColor: (theme) => theme.palette.secondary.light,
+                    }
                 }}>Continue with Google</Button>
             </Box>
             
