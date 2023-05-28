@@ -1,11 +1,14 @@
-import { AppBar, Box, Button, Container, Drawer, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, MenuList, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Container, Drawer, IconButton, ListItemIcon, ListItemText, Menu, MenuItem, MenuList, Stack, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import { Theme } from '@mui/material/styles';
 import { ContentCut } from "@mui/icons-material";
 import CloseIcon from '@mui/icons-material/Close';
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
+import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
+    const navigate = useNavigate();
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [openDrawer, setOpenDrawer] = useState(false);
 
@@ -22,25 +25,31 @@ const Navbar: React.FC = () => {
                     justifyContent: 'space-between',
                     marginTop: (theme: Theme) => theme.spacing(3)
                 }}>
-                    <Box sx={{
-                        textAlign: 'start'
-                    }}>
-                        <Typography
-                            style={{
-                                fontWeight: '400',
-                                fontSize: '14px',
-                                lineHeight: '17px'
-                            }}
-                        >Olá</Typography>
+                    <Stack direction='row' spacing={2}>
+                        <IconButton onClick={() => navigate(-1)} size='small' sx={{color: '#FFF'}}>
+                            <ArrowBackIosNewOutlinedIcon />
+                        </IconButton>
+                        
+                        <Box sx={{
+                            textAlign: 'start'
+                        }}>
+                            <Typography
+                                style={{
+                                    fontWeight: '400',
+                                    fontSize: '14px',
+                                    lineHeight: '17px'
+                                }}
+                            >Olá</Typography>
 
-                        <Typography
-                            style={{
-                                fontWeight: "700",
-                                fontSize: "24px",
-                                lineHeight: "29px"
-                            }}
-                        >Marina</Typography>
-                    </Box>
+                            <Typography
+                                style={{
+                                    fontWeight: "700",
+                                    fontSize: "24px",
+                                    lineHeight: "29px"
+                                }}
+                            >Marina</Typography>
+                        </Box>
+                    </Stack>
                     
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <Button

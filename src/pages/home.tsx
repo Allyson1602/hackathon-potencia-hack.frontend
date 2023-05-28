@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, CardMedia, Stack, Theme, Typography } from "@mui/material";
+import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Stack, Theme, Typography } from "@mui/material";
 import backHome from '../assets/images/back-home.png';
 import donationHome from '../assets/images/donation-home.png';
 import school1 from '../assets/images/school1.png';
@@ -126,30 +126,31 @@ const Home: React.FC = () => {
 
                     <Stack direction='row' spacing={1.5}>
                         {schools && schools.map((school) => (
-
                             <Card key={school.name} sx={{
                                 boxShadow: '0px 4px 4px rgba(127, 168, 123, 0.25)',
                                 height: '144px',
                                 padding: (theme) => theme.spacing(0, 1),
                                 border: '1px solid #ece1e166'
                             }}>
-                                <CardMedia sx={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    padding: (theme) => theme.spacing(3, 0, 1, 0)
-                                }}>
-                                    <img style={{width: '100%', height: '72px'}} src={school.image} alt="Escola" />
-                                </CardMedia>
-                                
-                                <CardContent sx={{
-                                    padding: '0'
-                                }}>
-                                    <Typography sx={{
-                                        fontWeight: '400',
-                                        fontSize: '12px',
-                                        lineHeight: '15px',
-                                    }}>{school.name}</Typography>
-                                </CardContent>
+                                <CardActionArea onClick={() => {navigate('/app/school')}}>
+                                    <CardMedia sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        padding: (theme) => theme.spacing(3, 0, 1, 0)
+                                    }}>
+                                        <img style={{width: '100%', height: '72px'}} src={school.image} alt="Escola" />
+                                    </CardMedia>
+                                    
+                                    <CardContent sx={{
+                                        padding: '0'
+                                    }}>
+                                        <Typography sx={{
+                                            fontWeight: '400',
+                                            fontSize: '12px',
+                                            lineHeight: '15px',
+                                        }}>{school.name}</Typography>
+                                    </CardContent>
+                                </CardActionArea>
                             </Card>
                         ))}
                     </Stack>
