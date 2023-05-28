@@ -37,7 +37,7 @@ const BottomBar: React.FC = () => {
                 </Stack>
                 
                 <Stack>
-                    <IconButton onClick={() => {navigate('/app/chat')}} sx={{
+                    <IconButton onClick={() => {navigate('/app/chat-bot')}} sx={{
                         flexDirection: 'column'
                     }}>
                         <TextsmsOutlinedIcon color="primary" />
