@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import Navbar from "./navbar";
 import { Outlet } from "react-router-dom";
+import BottomBar from "./bottomBar";
 
 const Main: React.FC = () => {
     return (
@@ -12,6 +13,8 @@ const Main: React.FC = () => {
             }}>
                 <Outlet />
             </Box>
+
+            <BottomBar />
         </Box>
     );
 };
